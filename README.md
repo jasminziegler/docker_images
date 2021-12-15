@@ -1,10 +1,3 @@
-# docker_images
+# Muchas gracias
 
-This repo holds several files for my personal docker images.
-They are not maintained and from time to time adjusted to my needs.
-
-- [base_image](./base_image/)
-- [docker-ionic](./docker-ionic/)
-- [docker-JabRef](./docker-JabRef/)
-- [Pdatascience](./Pdatascience/)
-- [Rdatascience](./Rdatascience/)
+to https://github.com/kapsner/docker_images for your previous work that I happily use!

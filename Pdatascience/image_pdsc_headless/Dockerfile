@@ -8,9 +8,9 @@ FROM pdsc_base:latest
 USER ${PYTHON_USER}
 
 # install torch / torchvision
-RUN yes | pip install \
-    torch \
-    torchvision
+#RUN yes | pip install \
+#    torch \
+#    torchvision
 
 ########################
 # install other datascience libraries
