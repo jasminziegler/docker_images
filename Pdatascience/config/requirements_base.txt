@@ -16,3 +16,4 @@ pytest
 requests
 tqdm
 virtualenv
+tensorflow
