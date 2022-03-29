@@ -35,6 +35,7 @@ USER root
 
 # update path
 ENV PATH=/home/${PYTHON_USER}/.local/bin:${PATH}
+#ENV PATH=/home/user/development/docX2txt ging nicht
 
 RUN rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/* && \

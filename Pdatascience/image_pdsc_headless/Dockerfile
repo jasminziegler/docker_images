@@ -42,6 +42,7 @@ RUN chown -R ${PYTHON_USER}:${PYTHON_USER} /home/${PYTHON_USER}/.config/
 # install sudo here, required for cifs-utils and mounting network drives
 RUN apt-get update && apt-get install -y --no-install-recommends \
     cifs-utils \
+    antiword \
     sudo
 RUN apt-get clean && \ 
     apt-get autoclean && \

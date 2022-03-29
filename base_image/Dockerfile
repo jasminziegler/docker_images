@@ -29,13 +29,13 @@ ENV USER="user"
 RUN useradd -ms /bin/bash ${USER}
 
 ########################
-# Install Miniconda and Python 3.8
+# Install Miniconda and Python 3.10
 ENV CONDA_AUTO_UPDATE_CONDA=false
 ENV PATH=/home/${USER}/miniconda/bin:$PATH
 
 # ARG PYVERSION
 # ENV PYVERSION=${PYVERSION}
-ENV PYVERSION=3.8.5
+ENV PYVERSION=3.9
 
 USER ${USER}
 
@@ -47,18 +47,23 @@ RUN ~/miniconda.sh -b -p ~/miniconda  && \
 RUN conda install -y python==${PYVERSION} && \
     conda clean -ya
 
+# trying to make pip faster
+# https://stackoverflow.com/questions/26669244/how-to-install-compile-pip-requirements-in-parallel-make-j-equivalent
+ENV MAKEFLAGS="-j$(nproc)"
+
 # install some (python) prerequisites
-RUN conda install -y \
+RUN yes | pip install \
+    auto-changelog \
     numpy \
-    pip \
     pyyaml \
     requests \
     ruamel_yaml \
     setuptools \
+    six \
+    testresources \
+    tqdm \
+    virtualenv \
     wheel
-
-RUN yes | pip install \
-    testresources
 
 ########################
 USER root
